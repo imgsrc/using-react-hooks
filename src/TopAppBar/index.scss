@@ -1,0 +1,40 @@
+@import '@material/top-app-bar/mdc-top-app-bar';
+
+.mdc-top-app-bar {
+    //transition: transform .15s;
+    position: relative;
+}
+
+.mdc-top-app-bar--fixed {
+    position: fixed;
+}
+
+.mdc-top-app-bar--sticky {
+    position: fixed;
+}
+
+.mdc-top-app-bar--dense {
+    transition: transform .1s;
+}
+
+.mdc-top-app-bar--dense + * {
+    margin-top: 48px;
+}
+
+.mdc-top-app-bar--prominent {
+    transition: transform .2s;
+}
+
+.mdc-top-app-bar--prominent + * {
+    margin-top: 128px;
+}
+
+.mdc-top-app-bar--hidden {
+    transition: transform .2s;
+    transform: translateY(-100%);
+}
+
+.mdc-top-app-bar--shown {
+    transition: transform .2s;
+    transform: translateY(0);
+}

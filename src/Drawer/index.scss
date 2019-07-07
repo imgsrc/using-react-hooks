@@ -1,0 +1,11 @@
+@import '@material/drawer/mdc-drawer';
+
+.mdc-drawer {
+    &--open ~ .mdc-drawer-app-content {
+        transition: margin-left $mdc-drawer-animation-enter;
+    }
+
+    &--closing ~ .mdc-drawer-app-content {
+        transition: margin-left $mdc-drawer-animation-exit;
+    }
+}

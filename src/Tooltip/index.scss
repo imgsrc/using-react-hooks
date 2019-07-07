@@ -1,0 +1,53 @@
+$mdc-tooltip-text-color: white !default;
+$mdc-tooltip-background-color: $material-color-grey-700 !default;
+$mdc-tooltip-font-size: 10px !default;
+$mdc-tooltip-font-size-large: 14px !default;
+
+.mdc-tooltip {
+    transform: scale(0);
+    transform-origin: top center;
+    z-index: 999;
+    background: $mdc-tooltip-background-color;
+    border-radius: 2px;
+    color: $mdc-tooltip-text-color;
+    display: inline-block;
+    font-size: $mdc-tooltip-font-size;
+    font-weight: 500;
+    line-height: 14px;
+    max-width: 170px;
+    position: fixed;
+    top: -500px;
+    left: -500px;
+    padding: 8px;
+    text-align: center;
+}
+
+.mdc-tooltip--active {
+    animation: pulse 200ms $mdc-animation-deceleration-curve-timing-function forwards;
+}
+
+.mdc-tooltip--large {
+    line-height: 14px;
+    font-size: $mdc-tooltip-font-size-large;
+    padding: 16px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        // Fixes a weird bug with the interaction between Safari and the result of
+        // the SASS compilation for the animation.
+        // Essentially, we need to make sure that "50%" and "100%" don't get merged
+        // into a single "50%, 100%" entry, so we need to avoid them having any
+        // matching properties.
+        transform: scale(0.99);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+}
